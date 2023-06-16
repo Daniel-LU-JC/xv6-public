@@ -532,3 +532,9 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+int
+getcpuid(void)
+{
+  return cpunum();
+}
