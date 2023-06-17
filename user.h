@@ -25,6 +25,10 @@ int sleep(int);
 int uptime(void);
 int getcpuid(void);
 
+// a kernel global variable which can be shared between processes
+int read_sh_var(void);
+int write_sh_var(int);  // return the old value
+
 // ulib.c
 int stat(const char*, struct stat*);
 char* strcpy(char*, const char*);

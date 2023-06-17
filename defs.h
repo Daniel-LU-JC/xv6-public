@@ -1,3 +1,5 @@
+#include "types.h"
+
 struct buf;
 struct context;
 struct file;
@@ -74,7 +76,7 @@ void            kbdintr(void);
 
 // lapic.c
 void            cmostime(struct rtcdate *r);
-int cpunum(void);
+int             cpunum(void);
 int             lapicid(void);
 extern volatile uint*    lapic;
 void            lapiceoi(void);
@@ -122,6 +124,9 @@ int             wait(void);
 void            wakeup(void*);
 void            yield(void);
 int             getcpuid(void);
+
+int             sys_read_sh_var(void);
+int             sys_write_sh_var(void);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

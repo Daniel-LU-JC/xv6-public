@@ -21,3 +21,6 @@
 #define SYS_mkdir  20
 #define SYS_close  21
 #define SYS_getcpuid 22
+
+#define SYS_read_sh_var   23
+#define SYS_write_sh_var  24

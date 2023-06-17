@@ -20,6 +20,9 @@ extern void trapret(void);
 
 static void wakeup1(void *chan);
 
+// the shared variable between processes
+int shared_var = 0;
+
 void
 pinit(void)
 {
@@ -537,4 +540,22 @@ int
 getcpuid(void)
 {
   return cpunum();
+}
+
+int
+sys_read_sh_var(void)
+{
+  return shared_var;
+}
+
+int
+sys_write_sh_var(void)
+{
+  int tmp = shared_var, new_val;
+
+  if (argint(0, &new_val) < 0)
+    return -1;
+
+  shared_var = new_val;
+  return tmp;
 }

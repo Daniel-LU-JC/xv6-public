@@ -30,3 +30,6 @@ SYSCALL(sbrk)
 SYSCALL(sleep)
 SYSCALL(uptime)
 SYSCALL(getcpuid)
+
+SYSCALL(read_sh_var)
+SYSCALL(write_sh_var)
